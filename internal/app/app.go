@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"net/http"
@@ -6,7 +6,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func main() {
+func Run(configPath string) {
 	router := mux.NewRouter()
 
 	router.Use(mux.CORSMethodMiddleware(router))
