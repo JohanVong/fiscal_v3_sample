@@ -1,4 +1,4 @@
-module Test_Server
+module github.com/JohanVong/fiscal_v3_sample
 
 go 1.14
 
