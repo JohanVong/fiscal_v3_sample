@@ -13,6 +13,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/gin-gonic/gin"
+	"github.com/go-redis/redis"
+	"github.com/jinzhu/gorm"
+	"github.com/mitchellh/panicwrap"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+
 	"github.com/JohanVong/fiscal_v3_sample/configs"
 	"github.com/JohanVong/fiscal_v3_sample/internal/db"
 	"github.com/JohanVong/fiscal_v3_sample/internal/metrics"
@@ -23,11 +29,6 @@ import (
 	"github.com/JohanVong/fiscal_v3_sample/internal/services/systemconfig"
 	"github.com/JohanVong/fiscal_v3_sample/internal/services/validator"
 	"github.com/JohanVong/fiscal_v3_sample/internal/transport/protobuf/ofd/cpcr"
-	"github.com/gin-gonic/gin"
-	"github.com/go-redis/redis"
-	"github.com/jinzhu/gorm"
-	"github.com/mitchellh/panicwrap"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 var _mssqlDbUser = os.Getenv("FISCAL_DB_USER")

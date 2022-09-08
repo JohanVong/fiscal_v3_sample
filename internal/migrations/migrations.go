@@ -14,15 +14,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/JohanVong/fiscal_v3_sample/internal/services/graylog"
 	migrate "github.com/rubenv/sql-migrate"
+
+	"github.com/JohanVong/fiscal_v3_sample/internal/services/graylog"
 )
 
-var mssqlDbUser = os.Getenv("FISCAL_DB_USER")
-var mssqlDbPassword = os.Getenv("FISCAL_DB_PASSWORD")
-var mssqlDbHost = os.Getenv("FISCAL_DB_HOST")
-var mssqlDbPort = os.Getenv("FISCAL_DB_PORT")
-var mssqlDbName = os.Getenv("FISCAL_DB_NAME")
+var _mssqlDbUser = os.Getenv("FISCAL_DB_USER")
+var _mssqlDbPassword = os.Getenv("FISCAL_DB_PASSWORD")
+var _mssqlDbHost = os.Getenv("FISCAL_DB_HOST")
+var _mssqlDbPort = os.Getenv("FISCAL_DB_PORT")
+var _mssqlDbName = os.Getenv("FISCAL_DB_NAME")
 
 func parseMigrations(path string) (err error) {
 	source := migrate.FileMigrationSource{Dir: path}
@@ -75,11 +76,11 @@ func (c migrationInfoCollection) Swap(i, j int) {
 
 func LaunchMigration() (err error) {
 	query := url.Values{}
-	query.Add("database", mssqlDbName)
+	query.Add("database", _mssqlDbName)
 	dbUrl := &url.URL{
 		Scheme:   "sqlserver",
-		User:     url.UserPassword(mssqlDbUser, mssqlDbPassword),
-		Host:     fmt.Sprintf("%s:%s", mssqlDbHost, mssqlDbPort),
+		User:     url.UserPassword(_mssqlDbUser, _mssqlDbPassword),
+		Host:     fmt.Sprintf("%s:%s", _mssqlDbHost, _mssqlDbPort),
 		RawQuery: query.Encode(),
 	}
 

@@ -21,7 +21,6 @@ func (d Decimal) Value() (driver.Value, error) {
 }
 
 func (d *Decimal) Scan(src interface{}) error {
-
 	switch v := src.(type) {
 	case int64:
 		d = NewDecimal(v, 0)

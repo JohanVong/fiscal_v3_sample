@@ -5,7 +5,6 @@ import (
 	"time"
 )
 
-//var ShiftCache = make(map[int]Shift, 100)
 type ShiftCacheST struct {
 	mx sync.Mutex
 	m  map[int]Shift

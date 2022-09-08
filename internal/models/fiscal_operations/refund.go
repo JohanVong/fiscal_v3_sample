@@ -6,10 +6,9 @@ import (
 	"time"
 
 	"github.com/ericlagergren/decimal"
-
-	db "github.com/JohanVong/fiscal_v3_sample/internal/db"
 	validator "gopkg.in/asaskevich/govalidator.v9"
 
+	"github.com/JohanVong/fiscal_v3_sample/internal/db"
 	"github.com/JohanVong/fiscal_v3_sample/internal/models"
 	"github.com/JohanVong/fiscal_v3_sample/internal/services/calculations"
 )

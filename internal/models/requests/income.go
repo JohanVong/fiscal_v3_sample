@@ -1,8 +1,9 @@
 package requests
 
 import (
-	"github.com/ericlagergren/decimal"
 	"time"
+
+	"github.com/ericlagergren/decimal"
 )
 
 /*

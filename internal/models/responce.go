@@ -1,8 +1,6 @@
 package models
 
-import (
-	"strconv"
-)
+import "strconv"
 
 type ResponseV2 struct {
 	Status int    `json:"Status"`
